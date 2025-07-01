@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://taagera.github.io/taagera",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "predeploy": "npm run build && cp public/.nojekyll dist/",
     "deploy": "gh-pages -d dist",
@@ -25,6 +25,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
+    "nodemon": "^3.1.10",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0"

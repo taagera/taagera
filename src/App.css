@@ -46,13 +46,14 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  transition: opacity 2s ease-out, transform 4s ease-out;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, visibility 0s 0.8s;
 }
 
 .logo-intro.fade-out {
   opacity: 0;
   transform: translateY(-20px);
   pointer-events: none;
+  visibility: hidden;
 }
 
 .logo-animation-container {
@@ -107,8 +108,8 @@ body {
 /* Logo Animation Components */
 .animated-logo {
   position: relative;
-  width: 400px;
-  height: 200px;
+  width: min(400px, 90vw);
+  height: min(200px, 45vw);
   margin: 0 auto;
 }
 
@@ -127,115 +128,117 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  width: min(240px, 50vw);
 }
 
 .house-component {
-  width: 240px;
+  width: 100%;
   height: auto;
   opacity: 0;
-  transform: translateX(-400px) rotate(-360deg);
+  transform: translateX(-100%) rotate(-360deg);
   animation: rollToCenterAndStop 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 /* Arabic Text - Slide from Left */
 .arabic-container {
   top: 55%;
-  left: 8%;
-  transform: translateY(-50%);
+  left: 35%;
   z-index: 31;
+  transform: translate(-50%, -50%);
+  width: min(240px, 40vw);
 }
 
 .arabic-component {
-  width: 240px;
+  width: 100%;
   height: auto;
   opacity: 0;
-  transform: translateX(-350px);
+  transform: translateX(-100%);
   animation: slideFromLeft 1s ease-out forwards 1.5s;
 }
 
 /* English Text - Slide from Right */
 .english-container {
   top: 98%;
-  right: 5%;
-  transform: translateY(-50%);
+  right: 31%;
   z-index: 31;
+  transform: translate(50%, -50%);
+  width: min(240px, 40vw);
 }
 
 .english-component {
-  width: 240px;
+  width: 100%;
   height: auto;
   opacity: 0;
-  transform: translateX(350px);
+  transform: translateX(100%);
   animation: slideFromRight 1s ease-out forwards 1.8s;
 }
 
 @keyframes rollToCenterAndStop {
   0% {
     opacity: 0;
-    transform: translateX(-500px) rotate(-360deg);
+    transform: translateX(-100%) rotate(-360deg);
   }
   10% {
     opacity: 0.2;
-    transform: translateX(-450px) rotate(-320deg);
+    transform: translateX(-90%) rotate(-320deg);
   }
   20% {
     opacity: 0.4;
-    transform: translateX(-400px) rotate(-280deg);
+    transform: translateX(-80%) rotate(-280deg);
   }
   30% {
     opacity: 0.6;
-    transform: translateX(-350px) rotate(-240deg);
+    transform: translateX(-70%) rotate(-240deg);
   }
   40% {
     opacity: 0.8;
-    transform: translateX(-300px) rotate(-200deg);
+    transform: translateX(-60%) rotate(-200deg);
   }
   50% {
     opacity: 1;
-    transform: translateX(-250px) rotate(-160deg);
+    transform: translateX(-50%) rotate(-160deg);
   }
   60% {
     opacity: 1;
-    transform: translateX(-200px) rotate(-140deg);
+    transform: translateX(-40%) rotate(-140deg);
   }
   70% {
     opacity: 1;
-    transform: translateX(-150px) rotate(-100deg);
+    transform: translateX(-30%) rotate(-100deg);
   }
   80% {
     opacity: 1;
-    transform: translateX(-100px) rotate(-80deg);
+    transform: translateX(-20%) rotate(-80deg);
   }
   90% {
     opacity: 1;
-    transform: translateX(-50px) rotate(-40deg);
+    transform: translateX(-10%) rotate(-40deg);
   }
   100% {
     opacity: 1;
-    transform: translateX(-0px) rotate(0deg);
+    transform: translateX(0) rotate(0deg);
   }
 }
 
 @keyframes slideFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-300px);
+    transform: translateX(-100%);
   }
   100% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0);
   }
 }
 
 @keyframes slideFromRight {
   0% {
     opacity: 0;
-    transform: translateX(300px);
-
+    transform: translateX(100%);
   }
   100% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0);
   }
 }
 
@@ -404,7 +407,7 @@ body {
 }
 
 .hero-logo-image {
-  max-width: 400px;
+  max-width: min(400px, 80vw);
   height: auto;
   opacity: 0;
   animation: heroLogoFade 1s ease-out forwards 0.5s;
@@ -752,28 +755,29 @@ body {
   
   /* Responsive Logo Animation Components */
   .animated-logo {
-    width: 300px;
-    height: 150px;
+    width: min(300px, 50vw);
+    height: auto;
   }
   
-  .house-component {
-    width: 90px;
+  .house-container {
+    top: 60%;
+    left: 50%;
+    z-index: 2;
+    width: min(180px, 45vw);
   }
   
-  .arabic-component,
-  .english-component {
-    width: 90px;
-  }
-  
-  /* Adjust positioning for smaller screens */
   .arabic-container {
-    top:30%;
-    left: 35%;
+    top: 55%;
+    left: 8%;
+    z-index: 31;
+    width: min(90px, 25vw);
   }
   
   .english-container {
-    top:30%;
-    right: 35%;
+    top: 98%;
+    right: 5%;
+    z-index: 31;
+    width: min(90px, 25vw);
   }
 }
 
@@ -792,27 +796,29 @@ body {
   
   /* Mobile Logo Animation Adjustments */
   .animated-logo {
-    width: 250px;
-    height: 120px;
+    width: min(250px, 80vw);
+    height: min(120px, 38vw);
   }
   
-  .house-component {
-    width: 70px;
+  .house-container {
+    top: 60%;
+    left: 50%;
+    z-index: 2;
+    width: min(140px, 40vw);
   }
   
-  .arabic-component,
-  .english-component {
-    width: 75px;
-  }
-  
-  /* Adjust positioning for mobile */
   .arabic-container {
-    top: 30%;
-    left: 30%;
+    top: 55%;
+    left: 8%;
+    z-index: 31;
+    width: min(75px, 22vw);
   }
   
   .english-container {
-    top: 30%;
-    right: 30%;
+    top: 98%;
+    right: 5%;
+    z-index: 31;
+    width: min(75px, 22vw);
+    
   }
 }

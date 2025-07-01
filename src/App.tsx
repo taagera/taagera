@@ -37,7 +37,7 @@ function App() {
         {/* House component - rolls in like a ball */}
         <div className="house-container">
           <img 
-            src="/House.svg" 
+            src={`${import.meta.env.BASE_URL}House.svg`}
             alt="House"
             className="house-component rolling-ball"
           />
@@ -46,7 +46,7 @@ function App() {
         {/* Arabic text - slides in from left */}
         <div className="arabic-container">
           <img 
-            src="/AraStr.svg" 
+            src={`${import.meta.env.BASE_URL}AraStr.svg`} 
             alt="Arabic Text"
             className="arabic-component slide-from-left"
           />
@@ -55,7 +55,7 @@ function App() {
         {/* English text - slides in from right */}
         <div className="english-container">
           <img 
-            src="/EngStr.svg" 
+            src={`${import.meta.env.BASE_URL}EngStr.svg`}
             alt="English Text"
             className="english-component slide-from-right"
           />
@@ -82,7 +82,7 @@ function App() {
           <div className="hero-container">
             <div className="hero-logo">
               <img 
-                src="/Logo.svg" 
+                src={`${import.meta.env.BASE_URL}Logo.svg`}  
                 alt="Taagera"
                 className="hero-logo-image"
               />
